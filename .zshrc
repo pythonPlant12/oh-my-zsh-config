@@ -7,10 +7,12 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 plugins=(git dirhistory history colored-man-pages zsh-history-substring-search kube-ps1 zsh-autosuggestions zsh-autocomplete)
 
 # Set name of the theme to load --- if set to "random", it will
@@ -115,18 +117,21 @@ alias get-ip="hostname -I"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Kubectl config
 alias dockerpsip="docker ps -q | xargs -n 1 docker inspect --format '{{range .NetworkSettings.Networks}} {{.IPAddress}}{{end}} {{ .Name }}' | sed 's/ \// /'"
-export PATH=/home/nlutsai/.pyenv/plugins/pyenv-virtualenv/shims:/home/nlutsai/.pyenv/shims:/home/nlutsai/.pyenv/bin:/home/nlutsai/.nvm/versions/node/v22.2.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/nlutsai/.local/share/JetBrains/Toolbox/scripts:/home/nlutsai/.local/share/JetBrains/Toolbox/scripts:~/.dev-utils/bin
+# export PATH=/home/nlutsai/.pyenv/plugins/pyenv-virtualenv/shims:/home/nlutsai/.pyenv/shims:/home/nlutsai/.pyenv/bin:/home/nlutsai/.nvm/versions/node/v22.2.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/nlutsai/.local/share/JetBrains/Toolbox/scripts:/home/nlutsai/.local/share/JetBrains/Toolbox/scripts:~/.dev-utils/bin
+#
+export PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+export POWERLEVEL9K_INSTANT_PROMPT=quiet
 alias k='kubectl'
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # export KUBECONFIG=~/.kube/config.qdqmedia-qdq-k8s-dev
 export KUBECONFIG=~/.kube/config.qdqmedia-qdq-k8s-pro
 export KUBECONFIG_DEV=~/.kube/config.qdqmedia-qdq-k8s-dev
 export KUBECONFIG_PROD=~/.kube/config.qdqmedia-qdq-k8s-pro
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-source $ZSH/oh-my-zsh.sh
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /Users/nikitalutsai/Programming/DevOps/django-nginx-EC2/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
